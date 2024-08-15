@@ -2,10 +2,11 @@
 #include <locale.h>
 
 // Escreva um algoritimo que solicite ao usuario N valores numericos e ao final apresente:
-// Vers„o 1: O maior e menor
-// Vers„o 2: as medidas de tendencia central Media, Moda, e Mediana
+// Vers√£o 1: O maior e menor
+// Vers√£o 2: as medidas de tendencia central Media, Moda, e Mediana
 // Moda -- Vetor que conta o elemento que mais se repete
-// 
+
+// ERRO NO RETORNO PARA O MENOR VALOR, CORRE√á√ÉO NO OUTRO ARQUIVO!
 
 int main () {
 	setlocale(LC_ALL, "portuguese");
@@ -22,7 +23,7 @@ int main () {
 			Maior = Valor;
 		else if(Qtd ==1 or Valor < Menor)
 			Menor = Valor;
-		printf(" Deseja informar o proximo? 1/Sim-2/N„o \n");
+		printf(" Deseja informar o proximo? 1/Sim-2/N√£o \n");
 		scanf("%i", &Resposta);
 	} while(Resposta==1);
 	
