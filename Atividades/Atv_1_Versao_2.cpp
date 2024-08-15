@@ -2,8 +2,8 @@
 #include <locale.h>
 
 //Escreva um algoritimo que solicite ao usuario N valores numericos e ao final apresente:
-// Vers„o 1: O maior e menor
-// Vers„o 2: as medidas de tendencia central Media, Moda, e Mediana
+// Vers√£o 1: O maior e menor
+// Vers√£o 2: as medidas de tendencia central Media, Moda, e Mediana
 
 void calcModa(float Qtds[], int valor, float *moda) {
     int maxCount = 0;
@@ -56,7 +56,7 @@ int main() {
         if (Qtd == 1 || Valor < Menor)
             Menor = Valor;
             
-        printf("Deseja informar o prÛximo? (1)Sim (2)N„o \n");
+        printf("Deseja informar o pr√≥ximo? (1)Sim (2)N√£o \n");
         scanf("%i", &Resposta);
         
     } while (Resposta == 1);
@@ -67,11 +67,11 @@ int main() {
 
     calcMediana(valores, Qtd, &Mediana);
   
-    printf("\nO maior valor È: %0.2f", Maior);
-    printf("\nO menor valor È: %0.2f", Menor);
-    printf("\nA mÈdia È: %0.2f", Media);
-    printf("\nA moda È: %0.2f", Moda);
-    printf("\nA mediana È: %0.2f", Mediana);
+    printf("\nO maior valor √©: %0.2f", Maior);
+    printf("\nO menor valor √©: %0.2f", Menor);
+    printf("\nA m√©dia √©: %0.2f", Media);
+    printf("\nA moda √©: %0.2f", Moda);
+    printf("\nA mediana √©: %0.2f", Mediana);
 
 
 }
