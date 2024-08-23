@@ -1,42 +1,27 @@
 #include <stdio.h>
 #include <locale.h>
+#include <stdlib.h>
+#include <string.h>
  /* Ver:1 -- O maior e menor idade + media
  	Ver:2 -- calcule a moda e a mediana
+ 	ver:3 -- Implementar Nome, Idade, Sexo e três notas de N alunos 
+ 			 Percentual de alunos aprovados.
+ 			 fazer tudo em um struct só.
+ 			 colocar limite de idade quando solicitado aos alunos.
+ 			 limitar variaveis a respectivas formas de dados
  */
  
- void calcModa(float Qtds[], int valor, float *moda) {
-    int maxCount = 0;
-    for (int i = 0; i < valor; ++i) {
-        int count = 0;
-        for (int j = 0; j < valor; ++j) {
-            if (Qtds[j] == Qtds[i])
-                ++count;
-        }
-        if (count > maxCount) {
-            maxCount = count;
-            *moda = Qtds[i];
-        }
-    }
-}
-
-void calcMediana(float Qtds[], int valor, float *mediana) {
-    for (int i = 0; i < valor - 1; ++i) {
-        for (int j = i + 1; j < valor; ++j) {
-            if (Qtds[i] > Qtds[j]) {
-                float temp = Qtds[i];
-                Qtds[i] = Qtds[j];
-                Qtds[j] = temp;
-            }
-        }
-    }
-    if (valor % 2 == 0)
-        *mediana = (Qtds[valor / 2 - 1] + Qtds[valor / 2]) / 2;
-    else
-        *mediana = Qtds[valor / 2];
-}
-
-int main() {
+ struct Aluno{
+ 	char Nome[50];
+ 	int Idade;
+ 	char sexo;
+ 	float NotaAluno[10];
+ 	bool aprovacao;
+ };
+ 
+ int main() {
     setlocale(LC_ALL, "portuguese");
+    struct Aluno Turma[100];
     float Valor, Maior, Menor, Soma = 0, Media, Moda, Mediana;
     int Resposta, Qtd = 0;
     float valores[100];
@@ -51,6 +36,7 @@ int main() {
 		if (Valor < 0 || Valor > 122){
         	printf("Digite novamente com um valor real \n");
 		}
+		
 	} while(Valor < 0 || Valor > 122);   
         valores[Qtd - 1] = Valor;
         Soma += Valor;
