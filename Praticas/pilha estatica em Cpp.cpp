@@ -8,24 +8,24 @@ private:
     std::string* elementos; // Elementos da Pilha (usando string para simplificar)
 
 public:
-    // Método que inicializa a Pilha no estado vazia
+    // MÃ©todo que inicializa a Pilha no estado vazia
     Pilha() {
         indiceTopo = -1;
         capacidadeMaxima = 30;
         elementos = new std::string[capacidadeMaxima];
     }
 
-    // Método que verifica se a Pilha está Vazia
+    // MÃ©todo que verifica se a Pilha estÃ¡ Vazia
     bool estaVazia() {
         return (indiceTopo == -1);
     }
 
-    // Método que verifica se a Pilha está cheia
+    // MÃ©todo que verifica se a Pilha estÃ¡ cheia
     bool estaCheia() {
         return (indiceTopo == capacidadeMaxima - 1);
     }
 
-    // Método para inserir um valor na Pilha
+    // MÃ©todo para inserir um valor na Pilha
     void empilhar(const std::string& valor) {
         if (!estaCheia()) {
             indiceTopo++;
@@ -35,7 +35,7 @@ public:
         }
     }
 
-    // Método para exibir o conteúdo da Pilha
+    // MÃ©todo para exibir o conteÃºdo da Pilha
     void imprimir() {
         if (!estaVazia()) {
             std::string mensagem = "";
@@ -48,7 +48,7 @@ public:
         }
     }
 
-    // Método para retornar o topo da Pilha e removê-lo
+    // MÃ©todo para retornar o topo da Pilha e removÃª-lo
     std::string desempilhar() {
         if (!estaVazia())
             return elementos[indiceTopo--];
@@ -56,7 +56,7 @@ public:
             return "";
     }
 
-    // Método que retorna o topo da pilha sem removê-lo
+    // MÃ©todo que retorna o topo da pilha sem removÃª-lo
     std::string topo() {
         if (!estaVazia())
             return elementos[indiceTopo];
@@ -64,7 +64,7 @@ public:
             return "";
     }
 
-    // Destrutor para liberar a memória alocada
+    // Destrutor para liberar a memÃ³ria alocada
     ~Pilha() {
         delete[] elementos;
     }
@@ -73,21 +73,21 @@ public:
 int main() {
     Pilha pilha;
 
-    // Testando a inserção de elementos na pilha
+    // Testando a inserÃ§Ã£o de elementos na pilha
     pilha.empilhar("Elemento 1");
     pilha.empilhar("Elemento 2");
     pilha.empilhar("Elemento 3");
 
-    // Exibindo o conteúdo da pilha
+    // Exibindo o conteÃºdo da pilha
     pilha.imprimir();
 
     // Removendo o topo da pilha
     std::cout << "Elemento removido: " << pilha.desempilhar() << std::endl;
 
-    // Exibindo o topo da pilha sem removê-lo
+    // Exibindo o topo da pilha sem removÃª-lo
     std::cout << "Topo da pilha: " << pilha.topo() << std::endl;
 
-    // Exibindo o conteúdo da pilha novamente
+    // Exibindo o conteÃºdo da pilha novamente
     pilha.imprimir();
 
     return 0;
