@@ -3,17 +3,18 @@
 /*
 Escreva um algoritimo que permita ao usuario informar os vertices e valores de arestas em uma matriz de adjacencia (MA) 
 e ao final o programa permita ao usuario percorrer rotas possiveis entre dois vertices
-Apresentar um menu com opçoes ao usuario com as funcionalidades a seguir:
+Apresentar um menu com opÃ§oes ao usuario com as funcionalidades a seguir:
 1: Inicializar Matriz;
 2: Imprimir matriz;
 3: Inserir valor na Matriz;
 4: Identificar caminho;
-5: Sair do programa;
+5: Valor de teste;
+6: Sair do programa;
 */
 
 int Ordem, Matriz[100][100];
 
-//função responsavel por limpar todas as arestas da matriz de adjacencia 
+//funÃ§Ã£o responsavel por limpar todas as arestas da matriz de adjacencia 
 bool inicializarMatriz(int qtdVertices){
 	for (int linhas=0; linhas<=qtdVertices; linhas++)
 		for(int colunas=0; colunas<=qtdVertices; colunas++)
@@ -21,7 +22,7 @@ bool inicializarMatriz(int qtdVertices){
 	return(true);
 }
 
-//Função responsavel por imprimir o menu de opções ao usuario
+//FunÃ§Ã£o responsavel por imprimir o menu de opÃ§Ãµes ao usuario
 int imprimirMenu(){
 	int Resposta;
 	printf("\n Programa para percorrer Grafos");
@@ -30,14 +31,14 @@ int imprimirMenu(){
 	printf("\n 3: Inserir valor na Matriz;");
 	printf("\n 4: Identificar caminho;");
 	printf("\n 5: Sair do programa;");
-	printf("\n Informe a opção desejada: ");
+	printf("\n Informe a opÃ§Ã£o desejada: ");
 	scanf("%i", &Resposta);
 	return(Resposta);
 }
 
 bool inserirValorNaMatriz(int Origem, int Destino, int Valor){
 	if (Origem == Destino){
-		printf("\n Esse grafo não permite laços!");
+		printf("\n Esse grafo nÃ£o permite laÃ§os!");
 		return (false);
 	}
 	if (Origem<1 or Destino<1 or Origem>Ordem or Destino>Ordem){
@@ -55,10 +56,10 @@ bool inserirValorNaMatriz(int Origem, int Destino, int Valor){
 void imprimirMatriz(int Ordem){
 	/*
 	REGRAS: 
-			1: Precisa apresentar o cabeçalho de linhas e colunas
-			2: Se o numero do cabeçalho for <10 imprimir com um 0 na frente
+			1: Precisa apresentar o cabeÃ§alho de linhas e colunas
+			2: Se o numero do cabeÃ§alho for <10 imprimir com um 0 na frente
 			3: Bloquear com XX os pontos iguais
-			4: mostrar valor na conexão
+			4: mostrar valor na conexÃ£o
 	*/
 }
 
@@ -73,24 +74,24 @@ int main(){
 			if(inicializarMatriz(Ordem)){
 				printf("\n Matriz inicializada com sucesso! \n");
 	} else{
-			printf("\n Matriz não inicializada!!! \n");
+			printf("\n Matriz nÃ£o inicializada!!! \n");
 	}
 		}else if(Opcao==2){ // Inserir valor na matriz
-			printf("Informe o vértice de Origem: ");
+			printf("Informe o vÃ©rtice de Origem: ");
 			int Origem, Destino, Valor;
 			scanf("%i", &Origem);
-			printf("Informe o vértice de Destino: ");
+			printf("Informe o vÃ©rtice de Destino: ");
 			scanf("%i", &Destino);
 			printf("Informe o valor da aresta: ");
 			scanf("%i", &Valor);
-			// Chamando a função que insere o valor na matriz
+			// Chamando a funÃ§Ã£o que insere o valor na matriz
 			if(inserirValorNaMatriz(Origem,Destino,Valor)){
-				printf("\n Valor %i inserido na matriz na posição [%i, %i] com sucesso!", Valor, Origem, Destino);
+				printf("\n Valor %i inserido na matriz na posiÃ§Ã£o [%i, %i] com sucesso!", Valor, Origem, Destino);
 			}
 		}else if(Opcao==3){ // Imprimir a matriz
 		/*
 		ATIVIDADE: 
-		OPÇÃO 3: IMPRIMIR A MATRIZ!
+		OPÃ‡ÃƒO 3: IMPRIMIR A MATRIZ!
 		*/
 		}else if(Opcao==4){ // Identificar caminho
 		
